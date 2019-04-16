@@ -18,7 +18,9 @@
 
 <div class="main"></div>
 <input class="add-btn" type="button" value="add timer-but1">
-<input class="add-btn" type="button" value="del timer-but2">
+<input class="add-btn" type="button" value="add timer-but2">
+<div class="main1"></div>
+<div class="main2"></div>
 <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="timer-button.js"></script>
 <script>
@@ -27,28 +29,29 @@ $(function(){
   var $btnAdd2=$('input[value="add timer-btn2"]');
 
   $btnAdd1.click(function(){
-    var btn= $timerBtn.init({
+    var btn1=new TimerBtn();
+    btn1.init({
+      container:'.main1',
       title:'发送验证码',
-      timer:10,
+      timer:5,
       clickHandle:function(){
-        alert('hello');
+        alert('hello1');
       }
     });
   })
   $btnAdd2.click(function(){
-    var btn= $timerBtn.init({
-      title:'发送验证码',
-      timer:10,
+    var btn2=new TimerBtn();
+    btn2.init({
+      container:'.main2',
+      title:'确定',
+      timer:6,
       clickHandle:function(){
-        alert('hello');
+        alert('hello2');
       }
     });
   })
 
 
-  $btnDel.click(function(){
-    $timerBtn.remove();
-  })
     
 })
 </script>
